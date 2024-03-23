@@ -46,7 +46,7 @@ To solve the problem of reattaching spots to the dice while maintaining the same
 1. **Initial Setup:**
    - We start with Die 1 having values [1, 2, 3, 4, 0, 0] and Die 2 having values [1, 5, 6, 8, 0, 0].
    - Die 1 has zeros for the last two faces because it cannot have more than 4 spots, and Die 2 includes values beyond 4 to accommodate missing 5 and 6 from die 1.
-   -we also 1,8 to Die 2 because sum “2” and “12” only occurs once which means 1+1=2 and 4+8=12
+   - we also add 1& 8 to Die 2 because sum “2” and “12” only occurs once which means 1+1=2 and 4+8=12
 
 
 2. **Calculate Original Probabilities:**
