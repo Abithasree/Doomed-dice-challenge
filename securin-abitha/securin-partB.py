@@ -52,10 +52,6 @@ def brute_force_zeroes(new_dice1, new_dice2):
                         print("Dice1:", new_dice1)
                         print("Dice2:", new_dice2)
                         return
-                    else:
-                        print("\nTried combination:")
-                        print("Dice1:", new_dice1)
-                        print("Dice2:", new_dice2)
 
 # Undooming the dice
 def undoom_dice():
