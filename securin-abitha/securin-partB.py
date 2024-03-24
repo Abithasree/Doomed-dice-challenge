@@ -67,7 +67,7 @@ def undoom_dice():
     
     # We are done with dice1! (for now)
     
-    # Generate new_dice2 by replacing values not present in dice1 with 0
+    # Generate new_dice2 by replacing values of zero with values not present in dice1 1. let other values be 0
     new_dice2 = [x if x not in new_dice1 else 0 for x in range(6, 0, -1)]
 
     # Now check the count probabilities which equal exactly 1; these values hold the MUST occurrences in dice2
