@@ -41,28 +41,39 @@ P(sum=x) = number of times x appeared / total number of outcomes
 
 ## Part B
 
-To solve the problem of reattaching spots to the dice while maintaining the same probabilities of obtaining sums, I followed a systematic approach. Here's a concise summary of the logic and approach:
+## Undooming the Dice Algorithm
 
-1. **Initial Setup:**
-   - We start with Die 1 having values [1, 2, 3, 4, 0, 0] and Die 2 having values [1, 5, 6, 8, 0, 0].
-   - Die 1 has zeros for the last two faces because it cannot have more than 4 spots, and Die 2 includes values beyond 4 to accommodate missing 5 and 6 from die 1.
-   - we also add 1& 8 to Die 2 because sum “2” and “12” only occurs once which means 1+1=2 and 4+8=12
+### Overview
+This algorithm is designed to adjust the values of two dice to match the original probabilities of their sums, while avoiding any occurrences of zero. The process involves determining the minimum and maximum occurrences for one of the dice based on the original probabilities, and then iteratively adjusting the values of both dice until the desired probabilities are achieved.
 
+### Steps
+1. **Original Probabilities Calculation**:
+   - Calculate the probabilities of all possible sums of two dice rolls.
 
-2. **Calculate Original Probabilities:**
-   - We calculate the probabilities of all possible sums when rolling both dice together.
-   - This is done by enumerating all combinations and counting the occurrences of each sum.
+2. **Undooming the Dice**:
+   - Initialize new dice values with zeros.
+   - Assign minimum values to the first four positions of new_dice1.
+   - Generate new_dice2 by replacing zeros with values not present in new_dice1.
 
-3. **Check for Consistency:**
-   - We define a function `check_okay()` to compare the probabilities of sums with the original probabilities.
-   - If the probabilities match, it indicates that the reattached spots maintain the same probabilities.
+3. **Determining Must Occurrences for new_dice2**:
+   - Identify sum values with exactly one occurrence in the original counts.
+   - Determine the maximum must occurence and minimum must occurrence values for new_dice2 based on these unique sum values i.e 2 and 12.
 
-4. **Brute-Force Approach:**
-   - We use a brute-force approach to find valid spot combinations for the remaining zeros on Die 1 and Die 2.
-   - We iterate over all possible combinations for the remaining spots, keeping in mind the constraints on the dice.
+4. **Assigning Values to new_dice2**:
+   - Replace zeros in new_dice2 with the determined maximum and minimum occurrences.
 
-5. **Output the Solution:**
-   - Once a valid combination is found, we output the final configurations of Die 1 and Die 2.
+5. **Brute-force Replacement**:
+   - Iterate over all possible combinations of the last two positions in both new_dice1 and new_dice2. (i.e we are replacing the rermaining zeroes)
+   - Check if the probabilities match the original probabilities.
+   - If a match is found, display the combination.
+
+### Usage
+To use this algorithm:
+1. Provide the original dice values and the number of faces.
+2. Run the algorithm to obtain adjusted dice values that match the original probabilities.
+
+### Example
+For a demonstration of how to use this algorithm, refer to the provided code examples and explanations. :)
      
 ![Screenshot 2024-03-24 023259](https://github.com/Abithasree/Doomed-dice-challenge/assets/109432119/1ee00529-6fd7-42f9-b389-43bd8d22c4ad)
 
